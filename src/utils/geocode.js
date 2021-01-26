@@ -11,9 +11,13 @@ const geocode = (address, callback) => {
             callback(undefined, {
                 description: body.current.weather_descriptions[0],
                 name: body.location.name,
+                region: body.location.region,
                 country: body.location.country,
                 currentTemperature: body.current.temperature,
-                feelsLike: body.current.feelslike
+                feelsLike: body.current.feelslike,
+                humidity: body.current.humidity,
+                windSpeed: body.current.wind_speed,
+                uvIndex: body.current.uv_index
             });
         }
     });

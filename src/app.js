@@ -54,8 +54,9 @@ app.get('/weather', (req, res)=>{
             res.send({
                 description: response.description,
                 address: req.query.address,
-                location: `This is a current temperature for ${response.name}, ${response.country}`,
-                forecast:`It is currently ${response.currentTemperature} degrees out. It feels like ${response.feelsLike} degrees out.`
+                location: `This is a current temperature for ${response.name}, ${response.region}, ${response.country}`,
+                forecast:`It is currently ${response.currentTemperature} degrees out. It feels like ${response.feelsLike} degrees out.
+                Humidity is ${response.humidity}%. Wind speed is ${response.windSpeed} and UV index is ${response.uvIndex}.`
             })
         }
     })
